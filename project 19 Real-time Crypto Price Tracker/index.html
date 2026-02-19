@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Crypto Price Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Crypto Price Tracker</h1>
+            <div class="header-info">
+                <span id="lastUpdate">Last updated: --</span>
+                <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Search cryptocurrency (e.g., Bitcoin, Ethereum)">
+            <select id="currencySelect">
+                <option value="inr">INR (₹)</option>
+                <option value="usd">USD ($)</option>
+                <option value="eur">EUR (€)</option>
+                <option value="gbp">GBP (£)</option>
+            </select>
+        </div>
+
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>Total Market Cap</h3>
+                <p id="totalMarketCap">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>24h Volume</h3>
+                <p id="totalVolume">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <h3>BTC Dominance</h3>
+                <p id="btcDominance">Loading...</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">All Coins</button>
+            <button class="tab-btn" data-tab="watchlist">Watchlist</button>
+            <button class="tab-btn" data-tab="trending">Trending</button>
+        </div>
+
+        <div class="crypto-container" id="cryptoContainer">
+            <div class="loading">Loading cryptocurrencies...</div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>← Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextBtn">Next →</button>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
